@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mind</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow accent">NeuroTrain</p>
+            <h2>Train Your Mind</h2>
+          </div>
+          <button class="ghost-button">Daily streak 12</button>
+        </header>
+
+        <section class="stats-row">
+          <article class="stat-box">
+            <span class="stat-label">Games</span>
+            <strong id="gamesCount">0</strong>
+          </article>
+          <article class="stat-box">
+            <span class="stat-label">Pattern points</span>
+            <strong id="patternBestValue">0</strong>
+          </article>
+          <article class="stat-box">
+            <span class="stat-label">Recall points</span>
+            <strong id="recallBestValue">0</strong>
+          </article>
+          <article class="stat-box">
+            <span class="stat-label">Echo points</span>
+            <strong id="echoBestValue">0</strong>
+          </article>
+        </section>
+        <div class="stats-actions">
+          <button id="resetStatsBtn" class="ghost-button" type="button">Reset statistics</button>
+        </div>
+
+        <section class="exercise-grid" id="exerciseGrid">
+          <article class="exercise-card active" data-game="pattern">
+            <div class="card-header">
+              <span class="mini-dot pattern"></span>
+              <span>Pattern Grid</span>
+            </div>
+            <div class="exercise-body">
+              <div class="mini-grid">
+                <span class="filled"></span>
+                <span></span>
+                <span class="filled"></span>
+                <span></span>
+                <span></span>
+                <span class="filled"></span>
+                <span class="filled"></span>
+                <span></span>
+                <span class="filled"></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="exercise-card" data-game="recall">
+            <div class="card-header">
+              <span class="mini-dot recall"></span>
+              <span>Number Recall</span>
+            </div>
+            <div class="exercise-body number-body">
+              <span>8</span>
+              <span>2</span>
+              <span>4</span>
+              <span>9</span>
+            </div>
+          </article>
+
+          <article class="exercise-card" data-game="echo">
+            <div class="card-header">
+              <span class="mini-dot echo"></span>
+              <span>Color Echo</span>
+            </div>
+            <div class="exercise-body color-body">
+              <span class="swatch purple"></span>
+              <span class="swatch cyan"></span>
+              <span class="swatch yellow"></span>
+            </div>
+          </article>
+        </section>
+
+        <section class="play-area">
+          <div class="play-header">
+            <div>
+              <p class="eyebrow">Current challenge</p>
+              <h3 id="gameTitle">Pattern Grid</h3>
+            </div>
+            <button id="startBtn" class="primary-button">Start round</button>
+          </div>
+
+          <div id="gamePanel" class="game-panel">
+            <div id="patternGame" class="game-mode active">
+              <div class="grid-board" id="patternBoard"></div>
+              <div class="answer-row" style="margin-top: 18px;">
+                <button id="patternSubmit" class="small-button">Correct</button>
+              </div>
+            </div>
+
+            <div id="recallGame" class="game-mode">
+              <div class="memory-display" id="recallDisplay">Watch the sequence</div>
+              <div class="answer-row">
+                <input id="recallInput" type="text" maxlength="8" placeholder="Type the numbers" />
+                <button id="recallSubmit" class="small-button">Correct</button>
+              </div>
+            </div>
+
+            <div id="echoGame" class="game-mode">
+              <div class="color-sequence" id="colorSequence"></div>
+              <div class="answer-row">
+                <button id="echoSubmit" class="small-button" type="button">Correct</button>
+              </div>
+              <div class="color-picker" id="colorPicker">
+                <button class="color-option purple" data-color="purple"></button>
+                <button class="color-option cyan" data-color="cyan"></button>
+                <button class="color-option yellow" data-color="yellow"></button>
+                <button class="color-option pink" data-color="pink"></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="status-bar">
+            <span id="statusText">Ready for the next challenge.</span>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

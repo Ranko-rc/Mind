@@ -7,6 +7,8 @@
   --text: #ecf5ff;
   --muted: #98a9c8;
   --purple: #7c6ef4;
+  --red: #e21414 ;
+  --blue: #4b13ce ;
   --purple-soft: rgba(124, 110, 244, 0.2);
   --cyan: #5ae1ff;
   --cyan-soft: rgba(90, 225, 255, 0.2);
@@ -396,7 +398,7 @@ button {
 }
 
 .grid-cell.active {
-  background: linear-gradient(135deg, var(--purple), var(--cyan));
+  background: linear-gradient(135deg,var(--red), var(--green), var(--blue));
   box-shadow: 0 0 0 3px rgba(124, 110, 244, 0.2);
 }
 
